@@ -107,20 +107,29 @@ body {
   margin-bottom: 0px;
   padding-left: 0px;
   align-items: center;
+
 }
 
 .header .site-address .item:not(:last-child) {
   margin-right: 40px;
 }
 
-.site-nav .link,
+
 .address-link {
-  color: var(--title-text-color);
+  color: var(--text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.02em;
 }
+
+.site-nav .link {
+    color: var(--title-text-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+  }
 
 .link-icon {
   vertical-align: middle;
@@ -162,12 +171,16 @@ body {
 
 footer {
   background-color: var(--background-dark-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 215px;
 }
 
 .footer-logo {
   display: block;
-  padding-top: 60px;
-  padding-bottom: 28px;
+  /* padding-top: 60px;
+  padding-bottom: 28px; */
+  margin-bottom: 20px;
   color: var(--white-text-color);
   font-family: Raleway, sans-serif;
   font-weight: 700;
@@ -176,7 +189,7 @@ footer {
 }
 
 .address {
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
   color: var(--white-text-color);
   font-style: normal;
   font-weight: 400;
@@ -185,9 +198,10 @@ footer {
 }
 
 .address .address-list {
-  padding-left: 0px;
+  padding: 0px;
   margin-top: 0px;
-  margin-bottom: 60px;
+  margin-bottom: 0px;
+  /* margin-bottom: 60px; */
 }
 
 .address .address-list .item:not(:last-child) {
@@ -208,13 +222,14 @@ footer {
 }
 
 .footer .connetion-links {
-  margin-top: 72px;
+  /* margin-top: 72px; */
   margin-left: 70px;
 }
 
 .footer .title {
   margin-top: 0px;
-  margin-bottom: 20x;
+  margin-bottom: 20px;
+  padding: 0px;
   font-size: 14px;
   font-weight: 700;
   line-height: 16px;
@@ -222,31 +237,42 @@ footer {
   color: var(--white-text-color);
 }
 
-.footer .connection-list {
+.footer .social-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-left: 0px;
+  margin: 0px;
 }
 
 .footer .connection-link {
-  display: flex;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff1a;
-  fill: #afb1b8;
+
 }
 
-.footer .connection-list .connection-link:not(:last-child) {
+.social-link .link {
+    width: 100%; 
+    height: 100%; 
+    display: flex;  
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff1a;
+    fill: #afb1b8;
+  }
+  
+
+.footer .social-link:not(:last-child) {
   margin-right: 10px;
 }
 
-.footer .connection-icon {
-  width: 20px;
-  height: 20px;
-}
+.footer .link-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+
+
 
 .footer .connection-link:hover {
   background-color: var(--accent-color);
@@ -306,11 +332,92 @@ footer {
   border: none;
 }
 
+/* specifics section */
+
+
+.specifics > .container .title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+  }
+
+.specifics .features-list {
+    display: flex;
+    padding-left: 0px;
+    margin: 0px;
+  }
+
+  
+
+.specifics .item {
+    width: calc((100% - 90px) / 4);
+    margin-right: 30px;
+    margin-bottom: 0px;
+    border-radius: 4px;
+  }
+  
+.specifics .item::before {
+    display: block;
+    content: '';
+    height: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--background-grey-color);
+  }
+  
+  .detail::before {
+    background-image: url('../images/antenna.svg');
+  }
+  
+  .punctuality::before {
+    background-image: url('../images/clock.svg');
+  }
+  
+  .planning::before {
+    background-image: url('../images/diagram.svg');
+  }
+  
+  .technologies::before {
+    background-image: url('../images/astronaut.svg');
+  }
+  
+.specifics .item:nth-child(4n) {
+    margin-right: 0px;
+  }
+  
+.specifics .features-list .title {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+  }
+  
+.specifics .features-list p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  
+.specifics .doing .doing-list {
+    display: flex;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
 /* Feautures section */
 
+.features .container {
+    padding-top: 0px;
+}
+
 .features > .container .title {
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 50px;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -318,77 +425,20 @@ footer {
   text-align: center;
 }
 
-.features h3 {
+.features h2, .features h3 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-.features .features-list {
-  display: flex;
-  padding-left: 0px;
-}
 
-.features .item {
-  width: calc((100% - 90px) / 4);
-  margin-right: 30px;
-  margin-bottom: 0px;
-  border-radius: 4px;
-}
-
-.features .item::before {
-  display: block;
-  content: '';
-  height: 120px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--background-grey-color);
-}
-
-.detail::before {
-  background-image: url('../images/antenna.svg');
-}
-
-.punctuality::before {
-  background-image: url('../images/clock.svg');
-}
-
-.planning::before {
-  background-image: url('../images/diagram.svg');
-}
-
-.technologies::before {
-  background-image: url('../images/astronaut.svg');
-}
-
-.features .item:nth-child(4n) {
-  margin-right: 0px;
-}
-
-.features .features-list .title {
-  color: var(--title-text-color);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-align: center;
-}
-
-.features .features-list p {
-  margin-top: 10px;
-  margin-bottom: 0px;
-}
-
-.features .doing .doing-list {
-  display: flex;
-  padding-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
 
 .features .doing-item:not(:last-child) {
+  display: block;
   margin-right: 30px;
 }
 
 /* TEAM section */
+
 
 .team {
   background-color: var(--background-grey-color);
@@ -413,15 +463,29 @@ footer {
 
 .team .team-list {
   display: flex;
-  padding-left: 0px;
+  margin: 0px;
+  padding: 0px;
 }
+
+.team .team-list .item{
+    background-color: var(--white-text-color);
+    border-radius: 0px, 0px, 4px, 4px;
+    box-shadow: 0px 2px 1px 0px #00000033;
+    box-shadow: 0px 1px 1px 0px #00000024;
+    box-shadow: 0px 1px 3px 0px #0000001F;
+
+  }
 
 .team .team-list .item:not(:last-child) {
   margin-right: 30px;
 }
 
+.team-list img {
+    margin-bottom: 30px;
+}
+
 .team .team-list h3 {
-  margin-top: 30px;
+  margin-top: 0px;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -435,15 +499,23 @@ footer {
 .social-list {
   display: flex;
   justify-content: space-around;
-  padding-left: 0px;
+  padding: 0px;
+  margin-bottom: 30px;
   margin-left: 32px;
   margin-right: 32px;
 }
 
 .social-link {
-  display: flex;
+  /* display: flex; */
   width: 44px;
   height: 44px;
+  
+}
+
+.social-link .link {
+  width: 100%; 
+  height: 100%; 
+  display: flex;  
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -455,7 +527,7 @@ footer {
   height: 20px;
 }
 
-.social-link:hover {
+.social-link .link:hover {
   background-color: var(--accent-color);
   fill: white;
 }
@@ -523,6 +595,7 @@ footer {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
+  border: 0px;
 }
 
 .button:hover {
@@ -544,7 +617,9 @@ footer {
   line-height: 2;
   letter-spacing: 0.06em;
   text-align: left;
+  
 }
+
 
 .examples .buttons {
   display: flex;
@@ -553,6 +628,7 @@ footer {
   margin-top: 0px;
   margin-bottom: 50px;
   padding-left: 0px;
+  
 }
 
 .examples > .buttons .item:not(:last-child) {
@@ -563,33 +639,34 @@ footer {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0px;
+  margin: 0px;
 }
 
-.examples > .projects .items {
+.examples  .projects .items {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
 }
 
-.examples > .projects .items:nth-child(3n) {
+.examples .projects .items:nth-child(3n) {
   margin-right: 0px;
 }
 
-.examples > .projects .items:nth-last-child(-n + 3) {
+.examples .projects .items:nth-last-child(-n + 3) {
   margin-bottom: 0px;
 }
 
-.examples > .projects .title {
+.examples .projects .title {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-.examples > .projects p {
-  margin-top: 0px;
+.examples .projects p {
+  margin-top: 4px;
   margin-bottom: 0px;
 }
 
-.examples > .projects .box {
+.examples .projects .box {
   padding: 20px 24px;
   border-left: 1px solid #ececec;
   border-right: 1px solid #ececec;
